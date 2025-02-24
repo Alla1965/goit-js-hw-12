@@ -1,10 +1,18 @@
-
 export default function makeUpGallery(image) {
   return `
-      ${image.slice(0,9)
-            .map(
-        ({ largeImageURL, webformatURL, tags, likes, views, comments, downloads}) => `
-      <li class="gallery-item">
+      ${image
+        // .slice(0, 9)
+        .map(
+          ({
+            largeImageURL,
+            webformatURL,
+            tags,
+            likes,
+            views,
+            comments,
+            downloads,
+          }) => `
+      <li class="gallery-item photo-card">
           <a href="${largeImageURL}">
             <img class="gallery-image" src="${webformatURL}" alt="${tags}" />
           </a>
@@ -27,8 +35,7 @@ export default function makeUpGallery(image) {
           </div>
                      </div>
         </li>`
-        
-      )
-      .join('')}
+        )
+        .join('')}
   `;
 }

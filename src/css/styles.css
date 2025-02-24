@@ -88,7 +88,7 @@
   flex-wrap: wrap;
   gap: 24px;
   width: 1128px;
-  height: 648px;
+  height: auto;
   margin-top: 32px;
   justify-content: center;
 }
@@ -159,4 +159,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.load-more {
+  border: none;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-left: 501px;
+  margin-top: 32px;
 }
