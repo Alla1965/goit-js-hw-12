@@ -16,7 +16,6 @@ export default async function searchPicture(q, page = 1) {
       },
     });
 
-    // return response.data; // Axios автоматично обробляє JSON
     return { hits: response.data.hits, totalHits: response.data.totalHits };
   } catch (error) {
     console.error('Помилка запиту:', error);

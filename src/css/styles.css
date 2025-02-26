@@ -22,7 +22,7 @@
   height: 40px;
   padding: 0px;
   margin-top: 36px;
-  width: 1128px;
+  width: 1512px;
   margin-top: 32px;
   margin-left: 0px;
   justify-content: center;
@@ -87,13 +87,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  width: 1128px;
+  width: 1512px;
   height: auto;
   margin-top: 32px;
   justify-content: center;
 }
 .gallery-item {
-  width: calc (100%/3-48px);
+  width: calc (1512px/4-72px);
   height: 200px;
   border: 1px solid #808080;
   text-align: center;
@@ -173,6 +173,6 @@
   line-height: 150%;
   letter-spacing: 0.04em;
   color: #fff;
-  margin-left: 501px;
+  margin-left: 710px;
   margin-top: 32px;
 }

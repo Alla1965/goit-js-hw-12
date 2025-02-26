@@ -1,7 +1,6 @@
 export default function makeUpGallery(image) {
   return `
       ${image
-        // .slice(0, 9)
         .map(
           ({
             largeImageURL,

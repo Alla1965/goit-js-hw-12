@@ -1,7 +1,6 @@
 import searchPicture from './js/pixabay-api';
 import makeUpGallery from './js/render-functions';
 import iziToast from 'izitoast';
-// import axios from 'axios';
 import 'izitoast/dist/css/iziToast.min.css';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -24,7 +23,6 @@ let currentPage = 1;
 let currentQuery = '';
 let totalLoaded = 0;
 let totalHits = 0;
-// currentPage = 1;
 
 refs.galleryContainer.innerHTML = '';
 refs.loadMoreBtn.hidden = true;
@@ -43,7 +41,7 @@ refs.formEl.addEventListener('submit', async e => {
       message: 'Введіть запит для пошуку!',
       position: 'topCenter',
     });
-    // e.target.elements.query.value = '';
+
     return;
   }
   // Оновлюємо пошуковий запит та скидаємо сторінку
@@ -61,7 +59,6 @@ refs.formEl.addEventListener('submit', async e => {
       currentPage
     );
     totalHits = apiTotalHits; // Оновлюємо глобальну змінну
-    console.log('Total Hits:', totalHits);
 
     //виводимо повідомлення  про те, що нічого не знайдено.
     if (!hits || hits.length === 0) {
@@ -77,13 +74,14 @@ refs.formEl.addEventListener('submit', async e => {
 
     renderPicture(hits, false);
     totalLoaded = hits.length;
+
     // Перевіряємо, чи потрібно показувати кнопку "Load more"
 
-    console.log(totalHits);
-
-    // if (totalHits > 40) {
-    refs.loadMoreBtn.hidden = false;
-    // }
+    if (totalHits <= 40) {
+      refs.loadMoreBtn.hidden = true;
+    } else {
+      refs.loadMoreBtn.hidden = false;
+    }
     //виводимо повідомлення  про помилку.
   } catch (error) {
     console.error('Помилка запиту:', error);
@@ -106,7 +104,6 @@ refs.loadMoreBtn.addEventListener('click', async () => {
     return; // Зупиняємо функцію, щоб уникнути зайвого запиту!
   }
   currentPage += 1;
-  console.log(`Загружается страница: ${currentPage}`);
 
   refs.loader.hidden = false;
 
